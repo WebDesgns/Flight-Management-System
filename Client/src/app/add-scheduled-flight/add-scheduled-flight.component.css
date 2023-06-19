@@ -1,0 +1,11 @@
+.wrapper {
+    min-height: 90vh;
+}
+
+.wrapper .container{
+    padding: 3rem 0px 10px 0px;
+}
+
+a {
+    color: #FF8040;
+}

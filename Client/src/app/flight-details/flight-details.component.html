@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">Flight Details</h2> 
+<hr/>
+<div *ngIf="flight" style="margin-left: auto;margin-right: auto;">
+  <div>
+    <label><b>Flight Model: </b></label> {{flight.flightModel}}
+  </div>
+  <div>
+    <label><b>Carrier Name: </b></label> {{flight.carrierName}}
+  </div>
+  <div>
+    <label><b>Seat Capacity: </b></label> {{flight.seatCapacity}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Flight List</button><br>
