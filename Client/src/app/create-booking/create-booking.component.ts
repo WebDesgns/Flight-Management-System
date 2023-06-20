@@ -10,7 +10,13 @@ import { Router } from '@angular/router';
 })
 export class CreateBookingComponent implements OnInit {
 
-  booking: Booking = new Booking();
+  booking: Booking = {
+    bookingId: null,
+    bookingDate: null,
+    noOfPassengers: null,
+    To : "",
+    From : ""
+  }
   submitted = false;
   constructor(private bookingService: BookingService, private router: Router) { }
 
