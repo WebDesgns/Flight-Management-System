@@ -1,5 +1,4 @@
-<div>
-
+<div class="airport-details">
   <h2 style="text-align: center;">Details of airport</h2>
   <hr />
   <div *ngIf="airport" style="margin-left: auto;margin-right: auto;">
@@ -13,8 +12,6 @@
       <label><b>Airport location: </b></label> {{airport.airportLocation}}
     </div>
   </div>
-  
-  <br>
-  <br>
+  <br><br>
   <button (click)="list()" class="btn btn-primary">Back to Airport List</button>
 </div>

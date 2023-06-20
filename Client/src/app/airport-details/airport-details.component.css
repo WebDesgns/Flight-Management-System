@@ -1,0 +1,7 @@
+.airport-details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 5rem 0 5rem 35rem;
+}

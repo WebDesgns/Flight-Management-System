@@ -23,10 +23,10 @@ import com.ibm.model.Flight;
 import com.ibm.service.FlightService;
 import com.ibm.exception.*;
 
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/flight")
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class FlightController {
 	@Autowired(required = true)
 	FlightService flightService;
