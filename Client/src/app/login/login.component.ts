@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
   // Check user for authenticatoin
   checkLogin() {
-<<<<<<< HEAD
     this.redirect();
     // this.loginservice.authenticate(this.username, this.password).subscribe(() => {
     //   this.loginservice.getRole(this.username).subscribe((data: User) => {
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
     //   console.log("Invalid Login Credentials..");
     //   this.invalidLogin = true;
     // });
-=======
+
     if(true){
       this.redirect();
     }
@@ -56,12 +55,10 @@ export class LoginComponent implements OnInit {
     //   console.log("Invalid Login Credentials..");
     //   this.invalidLogin = true;
     // }
->>>>>>> ecb2f1c39ea3a8b118a4201832f12eab1211c33f
   }
 
   // Redirect based on the user role
   redirect() {
-<<<<<<< HEAD
     // if(this.user.userName === 'kshitij' ) {
     //   sessionStorage.setItem('role', String(this.user.roles));
     //   sessionStorage.setItem('userId', String(this.user.userId));
@@ -80,25 +77,6 @@ export class LoginComponent implements OnInit {
     // }
     this.router.navigate(["/userpanel"]).then(()=> {
       window.location.reload();
-=======
-    console.log(this.user);
-    this.user.userType = 'citizen';
-    if(this.user.userType === 'citizen') {
-      sessionStorage.setItem('role', String(this.user.roles));
-      sessionStorage.setItem('userId', String(this.user.userId));
-      this.invalidLogin = false;
-      this.router.navigate(["/userpanel"]).then(()=> {
-        window.location.reload();
-      });
-    }
-    else if(this.user.userType === 'citizen') {
-      sessionStorage.setItem('role', 'admin');
-      sessionStorage.setItem('userId', String(this.user.userId));
-      this.invalidLogin = false;
-      this.router.navigate(["/adminpanel"]).then(()=> {
-        window.location.reload();
-      });
->>>>>>> ecb2f1c39ea3a8b118a4201832f12eab1211c33f
     }
     );
   }
