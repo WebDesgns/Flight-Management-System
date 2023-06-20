@@ -2,3 +2,13 @@
     padding: 5rem 12rem 0rem 12rem;
 }
 
+.panel .airport-subitem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.airport-subitem .btn{
+    border-radius: 5px;
+}

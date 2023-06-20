@@ -1,0 +1,6 @@
+.booking-add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5rem 0rem 5rem 35rem;
+}

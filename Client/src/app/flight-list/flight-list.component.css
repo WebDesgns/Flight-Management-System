@@ -1,3 +1,14 @@
 .panel{
     padding: 5rem 15rem 0rem 15rem;
 }
+
+.panel .flight-subitem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.flight-subitem .btn{
+    border-radius: 5px;
+}

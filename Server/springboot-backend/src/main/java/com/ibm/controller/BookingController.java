@@ -46,21 +46,19 @@ public class BookingController {
 	@PutMapping("/updateBooking")
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public void modifyBooking(@RequestBody Booking updateBooking) {
-
 		bookingService.updateBooking(updateBooking);
 	}
+
 
 	@GetMapping("/searchBooking/{id}")
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<?> searchBookingByID(@PathVariable("id") BigInteger bookingId) {
-
 		return bookingService.findBookingById(bookingId);
 	}
 
 	@DeleteMapping("/deleteBooking/{id}")
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public void deleteBookingByID(@PathVariable("id") BigInteger bookingId) {
-
 		bookingService.deleteBooking(bookingId);
 	}
 }

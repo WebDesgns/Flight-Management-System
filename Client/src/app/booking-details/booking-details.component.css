@@ -1,0 +1,6 @@
+.booking-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5rem 15rem 5rem 15rem;
+}
