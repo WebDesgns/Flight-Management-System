@@ -1,0 +1,190 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+/>
+
+<div
+  class="navbar is-lightyellow"
+  style="justify-content: center; z-index: 1000; position: relative"
+  *ngIf="displayWelcomeHeader"
+>
+  <div
+    style="
+      position: absolute;
+      top: 10;
+      margin-left: 95%;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    "
+    (click)="handleHeaderRemove()"
+  >
+    x
+  </div>
+  <div class="navbar-brand" style="position: relative">
+    <a class="navbar-item">
+      <img src="assets/Images/head_logo1.png" width="110" height="90" />
+      <p
+        style="
+          margin-left: 30px;
+          margin-bottom: 5px;
+          font-family: Georgia;
+          font-style: italic;
+          font-weight: bold;
+          font-size: 35px;
+          color: #3498db;
+        "
+      >
+        <b><i> WELCOME TO INFY AIRLINES</i></b>
+
+        <img
+          src="assets/Images/head_logo2.png"
+          style="margin-left: 30px"
+          width="110"
+          height="90"
+        /></p
+    ></a>
+  </div>
+</div>
+
+<nav
+  class="navbar is-info"
+  role="navigation"
+  aria-label="main navigation"
+  style="
+    background-color: #0f67b0;
+    box-shadow: 0px -3px 10px rgb(113, 113, 113);
+  "
+>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <a>
+          <h3 style="margin-bottom: 5px; font-family: Georgia" routerLink="/">
+            <b> Home </b>
+          </h3>
+        </a>
+      </div>
+
+      <a
+        *ngIf="user.length > 0"
+        class="navbar-item"
+        routerLink="/flight-booking"
+      >
+        <h3 style="margin-bottom: 5px; font-family: Georgia">
+          <b> Book Flight </b>
+        </h3>
+      </a>
+
+      <!-- <a class="navbar-item">
+        <h3 style="margin-bottom: 5px; font-family: Georgia">
+          <b> OFFERS </b>
+        </h3>
+      </a> -->
+
+      <div
+        *ngIf="user.length > 0"
+        class="navbar-item has-dropdown is-hoverable"
+      >
+        <a class="navbar-link">
+          <h3 style="margin-bottom: 5px; font-family: Georgia">
+            <b> Flight Management </b>
+          </h3>
+        </a>
+
+        <div class="navbar-dropdown">
+          <a
+            *ngIf="user[0].role === adminRole"
+            class="navbar-item"
+            routerLink="/add-flight"
+          >
+            Add Flight
+          </a>
+          <a
+            *ngIf="user[0].role === adminRole"
+            class="navbar-item"
+            routerLink="/issues"
+          >
+            Issues
+          </a>
+          <a class="navbar-item" routerLink="/flight-history">
+            Flight History
+          </a>
+
+          <!-- <a class="navbar-item" routerLink="/invoice"> Flight Invoice </a> -->
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <h3 style="margin-bottom: 5px; font-family: Georgia">
+            <b> More </b>
+          </h3>
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" routerLink="/aboutus"> About </a>
+          <a class="navbar-item" routerLink="/contactus"> Contact </a>
+          <div *ngIf="user.length > 0">
+            <hr class="navbar-divider" />
+            <a class="navbar-item" routerLink="/report-issue">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div *ngIf="user.length === 0" class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" routerLink="/signup">
+            <strong>Sign up</strong>
+          </a>
+
+          <a class="button is-primary" routerLink="/login-page">
+            <strong>Login</strong>
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="user.length > 0" class="navbar-item">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <span style="margin-right: 20px; font-weight: bold; font-size: 18px"
+              >Welcome, {{ user[0].name }}</span
+            >
+            <img
+              src="../../../assets/img/profilePhoto.jpg"
+              alt="profileImage"
+              style="
+                border-radius: 250px;
+                width: 28px;
+                height: 105px;
+                box-sizing: border-box;
+                transform: scale(1.5);
+              "
+            />
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" routerLink="/account-settings">
+              Account Settings
+            </a>
+            <a
+              class="navbar-item is-primary"
+              style="border-top: 1px solid #ddd"
+              (click)="handleLogout()"
+            >
+              <strong>Logout</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div *ngIf="user.length > 0" class="navbar-item">
+        {{ user[0]?.username }} User
+        <button (click)="displayUser()">Display User</button>
+      </div> -->
+    </div>
+  </div>
+</nav>

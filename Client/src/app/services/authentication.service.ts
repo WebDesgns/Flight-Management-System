@@ -11,16 +11,16 @@ export class AuthenticationService {
 
   //Retrieves user token and checks authentication
   authenticate(username, password) {
-    return true
-    // return this.httpClient.post<any>('http://localhost:8080/authenticate',
-    // {username, password}).subscribe(
-    //   userData => {
-    //     sessionStorage.setItem('username', username);
-    //     let tokenStr = 'Bearer' +userData.token;
-    //     sessionStorage.setItem('token', tokenStr);
-    //     return userData;
-    //   }
-    // );
+    // return true
+    return this.httpClient.post<any>('http://localhost:8080/authenticate',
+    {username, password}).subscribe(
+      userData => {
+        sessionStorage.setItem('username', username);
+        let tokenStr = 'Bearer' +userData.token;
+        sessionStorage.setItem('token', tokenStr);
+        return userData;
+      }
+    );
   }
 
   // Checks whether the user is logged in
@@ -41,6 +41,6 @@ export class AuthenticationService {
 
   // Adds a new User
   signUp(user: User) {
-    return this.httpClient.post('http://localhost:8080/user/createUser', user);
+    return this.httpClient.post('http://localhost:8080/signup', user);
   }
 }

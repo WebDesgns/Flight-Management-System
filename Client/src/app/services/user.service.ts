@@ -9,9 +9,9 @@ export class UserService {
 
   private baseUrl='http://localhost:8080/user';
   constructor(private http: HttpClient) { }
-  
+
   createUser(user: object): Observable<Object>{
-    return this.http.post(`${this.baseUrl}/addUser`, user);
+    return this.http.post(`${this.baseUrl}/createUser`, user);
   }
 
   updateUser(user: object): Observable<Object>{

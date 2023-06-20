@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -25,7 +25,8 @@
     "@mdi/font": "^5.1.45",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "angular-password-strength-meter": "^2.0.0",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.6.2",
+    "bootstrap-icons": "^1.10.5",
     "jquery": "^3.5.1",
     "ng2-password-strength-bar": "^1.2.3",
     "rxjs": "~6.5.4",

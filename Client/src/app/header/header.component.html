@@ -23,9 +23,13 @@
                     <a href="adminpanel">Home</a>
                 </button>
             </li>
+            <li *ngIf="!user && !admin" class="nav-item">
+                <button class="btn btn-info">
+                    <a style="color: aliceblue;" href="signup">SIGN UP</a>
+                </button>
             <li *ngIf="!buttonFlag" class="nav-item">
-                <button class="btn btn-success">
-                    <a href="login">LOG IN</a>
+                <button class="btn btn-info">
+                    <a style="color: aliceblue;" href="login">LOG IN</a>
                 </button>
             </li>
             <li *ngIf="buttonFlag" class="nav-item">

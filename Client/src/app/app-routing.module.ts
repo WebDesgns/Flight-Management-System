@@ -26,35 +26,47 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ListUserComponent } from './list-user/list-user.component';
 
+import { HomepageComponent } from './homepage/homepage.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserpanelComponent } from './userpanel/userpanel.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+
 
 const routes: Routes = [
-  {path: '', redirectTo: 'booking',pathMatch: 'full'},
-  {path: 'bookings', component: BookingListComponent},
-  {path: 'addBooking', component: CreateBookingComponent},
-  {path: 'updateBooking/:id', component: UpdateBookingComponent},
-  {path: 'bookingDetails/:id', component: BookingDetailsComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'logout', component: LogoutComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'airports', component: AirportListComponent },
-  {path: 'addAirport', component: CreateAirportComponent },
-  {path: 'update/:airportCode', component: UpdateAirportComponent },
-  {path: 'details/:airportCode', component: AirportDetailsComponent },
-  {path: 'flights', component: FlightListComponent },
-  {path: 'addFlight', component: CreateFlightComponent },
-  {path: 'updateFlight/:flightNo', component: UpdateFlightComponent },
-  {path: 'flightDetails/:flightNo', component: FlightDetailsComponent },
-  {path: 'scheduledFlight/add', component:AddScheduledFlightComponent},
-  {path: 'scheduledFlight/show', component:ShowScheduledFlightsComponent},
-  {path: 'scheduledFlight/search', component:SearchScheduledFlightComponent},
-  {path: 'welcomeAdmin', component:WelcomeAdminComponent},
-  {path: 'scheduledFlight/modify', component: ModifyScheduledFlightComponent},
-  {path: 'addUser', component: CreateUserComponent},
-  {path: 'updateUser/:id', component: UpdateUserComponent},
-  {path: 'userDetails/:id', component: UserDetailsComponent},
-  {path: 'users', component: ListUserComponent}
+  { path: '', component: HomepageComponent }, //redirectTo: 'bookings', pathMatch: 'full'
+  { path: 'bookings', component: BookingListComponent },
+  { path: 'addBooking', component: CreateBookingComponent },
+  { path: 'updateBooking/:id', component: UpdateBookingComponent },
+  { path: 'bookingDetails/:id', component: BookingDetailsComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'airports', component: AirportListComponent },
+  { path: 'addAirport', component: CreateAirportComponent },
+  { path: 'update/:airportCode', component: UpdateAirportComponent },
+  { path: 'details/:airportCode', component: AirportDetailsComponent },
+  { path: 'flights', component: FlightListComponent },
+  { path: 'addFlight', component: CreateFlightComponent },
+  { path: 'updateFlight/:flightNo', component: UpdateFlightComponent },
+  { path: 'flightDetails/:flightNo', component: FlightDetailsComponent },
+  { path: 'scheduledFlight/add', component: AddScheduledFlightComponent },
+  { path: 'scheduledFlight/show', component: ShowScheduledFlightsComponent },
+  { path: 'scheduledFlight/search', component: SearchScheduledFlightComponent },
+  { path: 'welcomeAdmin', component: WelcomeAdminComponent },
+  { path: 'scheduledFlight/modify', component: ModifyScheduledFlightComponent },
+  { path: 'addUser', component: CreateUserComponent },
+  { path: 'updateUser/:id', component: UpdateUserComponent },
+  { path: 'userDetails/:id', component: UserDetailsComponent },
+  { path: 'users', component: ListUserComponent },
+  { path: 'homepage', component: HomepageComponent },
+  { path: 'aboutus', component: AboutUsComponent },
+  { path: 'contactus', component: ContactUsComponent },
+  { path: 'navbar', component: NavbarComponent},
+  { path: 'userpanel', component: UserpanelComponent},
+  { path: 'adminpanel', component: AdminpanelComponent}
 
 ];
 
@@ -62,11 +74,12 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
-export const routingComponents= [
+export class AppRoutingModule {}
+
+export const routingComponents = [
   AddScheduledFlightComponent,
   SearchScheduledFlightComponent,
   ShowScheduledFlightsComponent,
   WelcomeAdminComponent,
   ModifyScheduledFlightComponent
-]
+];

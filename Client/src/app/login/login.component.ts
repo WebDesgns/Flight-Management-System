@@ -3,6 +3,7 @@ import { User } from '../model/user.component';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { ThrowStmt } from '@angular/compiler';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-login',
@@ -16,23 +17,23 @@ export class LoginComponent implements OnInit {
   user: User={"userId": 0,"userType": "", "userName":"", "userPassword":"", "userPhone": 0, "userEmail":"", "active": null, "roles": ""};
   invalidLogin = false;
 
-  constructor(private router: Router, private loginservice: AuthenticationService) { }
+  constructor(private router: Router,
+    private loginservice: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
   // Check user for authenticatoin
   checkLogin() {
-    if(true){
-      console.log(this.user);
-      this.redirect();
-    }
-    // if(this.loginservice.authenticate(this.username, this.password)) {
-    //   this.loginservice.getRole(this.username).subscribe((data: User)=> {
-    //     this.user = data;
-    //     this.redirect();
-    //   });
+    // if(true){
+    //   this.redirect();
     // }
+    if(this.loginservice.authenticate(this.username, this.password)) {
+      this.loginservice.getRole(this.username).subscribe((data: User)=> {
+        this.user = data;
+        this.redirect();
+      });
+    }
     else {
       console.log("Invalid Login Credentials..");
       this.invalidLogin = true;
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
   // Redirect based on the user role
   redirect() {
     if(this.user.userType === 'citizen') {
-      sessionStorage.setItem('role', 'customer');
+      sessionStorage.setItem('role', String(this.user.roles));
       sessionStorage.setItem('userId', String(this.user.userId));
       this.invalidLogin = false;
       this.router.navigate(["/userpanel"]).then(()=> {
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('role', 'admin');
       sessionStorage.setItem('userId', String(this.user.userId));
       this.invalidLogin = false;
-      this.router.navigate(["adminpanel"]).then(()=> {
+      this.router.navigate(["/adminpanel"]).then(()=> {
         window.location.reload();
       });
     }

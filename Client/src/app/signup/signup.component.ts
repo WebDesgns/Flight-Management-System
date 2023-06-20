@@ -26,8 +26,6 @@ export class SignupComponent implements OnInit {
 
   // Adds a new User
   signUp() {
-    this.user.userId = Math.random()*100;
-    this.user.userType = "citizen";
     console.log(this.user);
     this.loginservice.signUp(this.user).subscribe();
     this.router.navigate(["login"]);

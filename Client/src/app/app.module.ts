@@ -33,9 +33,16 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserpanelComponent } from './userpanel/userpanel.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 
 @NgModule({
   declarations: [
+    HomepageComponent,
     AppComponent,
     FooterComponent,
     HeaderComponent,
@@ -62,7 +69,12 @@ import { ListUserComponent } from './list-user/list-user.component';
     UserDetailsComponent,
     CreateUserComponent,
     UpdateUserComponent,
-    ListUserComponent
+    ListUserComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    NavbarComponent,
+    UserpanelComponent,
+    AdminpanelComponent
   ],
   imports: [
     BrowserModule,
