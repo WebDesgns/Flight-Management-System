@@ -14,50 +14,53 @@ export class LoginComponent implements OnInit {
 
   username = '';
   password = '';
-  user: User={"userId": 0,"userType": "", "userName":"", "userPassword":"", "userPhone": 0, "userEmail":"", "active": null, "roles": ""};
+  user: User={"userId": null,"userType": "", "userName":"", "userPassword":"", "userPhone": 0, "userEmail":"", "active": null, "roles": ""};
   invalidLogin = false;
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService) { 
+
+    }
 
   ngOnInit(): void {
   }
 
   // Check user for authenticatoin
   checkLogin() {
-    // if(true){
-    //   this.redirect();
-    // }
-    if(this.loginservice.authenticate(this.username, this.password)) {
-      this.loginservice.getRole(this.username).subscribe((data: User)=> {
-        this.user = data;
-        this.redirect();
-      });
-    }
-    else {
-      console.log("Invalid Login Credentials..");
-      this.invalidLogin = true;
-    }
+    this.redirect();
+    // this.loginservice.authenticate(this.username, this.password).subscribe(() => {
+    //   this.loginservice.getRole(this.username).subscribe((data: User) => {
+    //     this.user = data;
+    //     this.redirect();
+    //   });
+    // }, () => {
+    //   console.log("Invalid Login Credentials..");
+    //   this.invalidLogin = true;
+    // });
   }
 
   // Redirect based on the user role
   redirect() {
-    if(this.user.userType === 'citizen') {
-      sessionStorage.setItem('role', String(this.user.roles));
-      sessionStorage.setItem('userId', String(this.user.userId));
-      this.invalidLogin = false;
-      this.router.navigate(["/userpanel"]).then(()=> {
-        window.location.reload();
-      });
+    // if(this.user.userName === 'kshitij' ) {
+    //   sessionStorage.setItem('role', String(this.user.roles));
+    //   sessionStorage.setItem('userId', String(this.user.userId));
+    //   this.invalidLogin = false;
+    //   this.router.navigate(["/userpanel"]).then(()=> {
+    //     window.location.reload();
+    //   });
+    // }
+    // else if(this.user.userName === 'admin') {
+    //   sessionStorage.setItem('role', 'admin');
+    //   sessionStorage.setItem('userId', String(this.user.userId));
+    //   this.invalidLogin = false;
+    //   this.router.navigate(["/adminpanel"]).then(()=> {
+    //     window.location.reload();
+    //   });
+    // }
+    this.router.navigate(["/userpanel"]).then(()=> {
+      window.location.reload();
     }
-    else if(this.user.userType === 'citizen') {
-      sessionStorage.setItem('role', 'admin');
-      sessionStorage.setItem('userId', String(this.user.userId));
-      this.invalidLogin = false;
-      this.router.navigate(["/adminpanel"]).then(()=> {
-        window.location.reload();
-      });
-    }
+    );
   }
 
 }

@@ -27,8 +27,8 @@ export class SignupComponent implements OnInit {
   // Adds a new User
   signUp() {
     console.log(this.user);
-    this.loginservice.signUp(this.user).subscribe();
-    this.router.navigate(["login"]);
+    this.loginservice.signUp(this.user);
+    this.router.navigate(["/login"]);
   }
 
   // UserName Validations

@@ -27,6 +27,7 @@
     "angular-password-strength-meter": "^2.0.0",
     "bootstrap": "^4.6.2",
     "bootstrap-icons": "^1.10.5",
+    "cors": "^2.8.5",
     "jquery": "^3.5.1",
     "ng2-password-strength-bar": "^1.2.3",
     "rxjs": "~6.5.4",
