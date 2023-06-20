@@ -16,11 +16,12 @@ export class BookingDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router,
     private bookingService: BookingService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.booking = new Booking();
 
-    this.bookingId = this.route.snapshot.params['bookingId'];
-
+    this.bookingId = await this.route.snapshot.params['id'];
+    console.log("bookingid",this.bookingId);
+    
     this.bookingService.getBooking(this.bookingId)
     .subscribe(data => {
       console.log(data);

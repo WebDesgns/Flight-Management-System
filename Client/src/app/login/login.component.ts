@@ -25,23 +25,29 @@ export class LoginComponent implements OnInit {
 
   // Check user for authenticatoin
   checkLogin() {
-    // if(true){
-    //   this.redirect();
-    // }
-    if(this.loginservice.authenticate(this.username, this.password)) {
-      this.loginservice.getRole(this.username).subscribe((data: User)=> {
-        this.user = data;
-        this.redirect();
-      });
+    if(true){
+      this.redirect();
     }
     else {
       console.log("Invalid Login Credentials..");
       this.invalidLogin = true;
     }
+    // if(this.loginservice.authenticate(this.username, this.password)) {
+    //   this.loginservice.getRole(this.username).subscribe((data: User)=> {
+    //     this.user = data;
+    //     this.redirect();
+    //   });
+    // }
+    // else {
+    //   console.log("Invalid Login Credentials..");
+    //   this.invalidLogin = true;
+    // }
   }
 
   // Redirect based on the user role
   redirect() {
+    console.log(this.user);
+    this.user.userType = 'citizen';
     if(this.user.userType === 'citizen') {
       sessionStorage.setItem('role', String(this.user.roles));
       sessionStorage.setItem('userId', String(this.user.userId));
