@@ -22,6 +22,8 @@ public class Booking {
 	// @GeneratedValue(strategy=GenerationType.AUTO)
 	private BigInteger bookingId;
 	private String bookingDate;
+	private String source;
+	private String destination;
 	private int noOfPassengers;
 
 	public BigInteger getBookingId() {
@@ -38,6 +40,22 @@ public class Booking {
 
 	public void setBookingDate(String bookingDate) {
 		this.bookingDate = bookingDate;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setFrom(String destination) {
+		this.destination = destination;
 	}
 
 	public int getNoOfPassengers() {
