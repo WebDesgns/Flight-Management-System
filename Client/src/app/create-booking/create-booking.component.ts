@@ -14,8 +14,8 @@ export class CreateBookingComponent implements OnInit {
     bookingId: null,
     bookingDate: null,
     noOfPassengers: null,
-    To : "",
-    From : ""
+    To : null,
+    From :null
   }
   submitted = false;
   constructor(private bookingService: BookingService, private router: Router) { }

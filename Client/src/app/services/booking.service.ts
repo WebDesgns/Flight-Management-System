@@ -15,6 +15,7 @@ export class BookingService {
   }
 
   createBooking(booking: Object): Observable<Object> {
+    console.log(booking);
     return this.http.post(`${this.baseUrl}/createBooking`, booking);
   }
 
