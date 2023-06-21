@@ -1,3 +1,14 @@
 .panel{
     padding: 5rem 12rem 0rem 12rem;
 }
+
+.panel .booking-subitem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.booking-subitem .btn{
+    border-radius: 5px;
+}
