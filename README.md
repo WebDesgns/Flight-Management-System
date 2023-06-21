@@ -30,13 +30,13 @@ Make sure you have the following software installed:
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/your-username/flight-management-system.git
+git clone https://github.com/WebDesgns/Flight-Management-System.git
 ```
 
 2. Navigate to the frontend directory:
 
 ```shell
-cd flight-management-system/frontend
+cd flight-management-system/Client
 ```
 
 3. Install the dependencies:
@@ -58,7 +58,7 @@ ng serve
 1. Navigate to the backend directory:
 
 ```shell
-cd flight-management-system/backend
+cd flight-management-system/server
 ```
 
 2. Build the project using Maven:
